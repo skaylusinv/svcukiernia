@@ -11,36 +11,18 @@
 
 <body>
 
-<button id="open-contact-btn" class="main-btn">
-    <i class="fa fa-envelope-o" aria-hidden="true"></i> Formularz kontaktowy
-</button>
-
-<div id="formularz-kontaktowy" class="contact" role="dialog" aria-label="Formularz kontaktowy" aria-hidden="true">
-    <form class="emailForm" method="POST" action="https://formspree.io/f/mayvrqqj">
-        <label class="half" aria-live="polite">
-            Twój email
-            <input class="form-data" name="email" type="email" placeholder="Wpisz tu twój email" required>
-        </label>
-        <label class="half" aria-live="polite">
-            Temat
-            <input class="form-data" name="_subject" placeholder="Wpisz tu temat wiadomości" minlength="4" maxlength="78"
-                   required>
-        </label>
-        <label aria-live="polite">
-            Wiadomość
-            <textarea class="form-data" name="message" placeholder="Wpisz tu twoją wiadomość" minlength="4"
-                      maxlength="6000" required></textarea>
-        </label>
-        <button class="emailFormSubmit main-btn" name="submit" type="submit">Wyślij</button>
-
-        <div class="emailFormAlert" aria-live="polite"></div>
-    </form>
-
-    <button type="button" id="close-contact-btn" class="close-btn" aria-label="Zamknij formularz kontaktowy"
-            title="Zamknij formularz kontaktowy">
-        <i class="fa fa-times close-form"></i>
-    </button>
-</div>
+<form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
+  <fieldset id="fs-frm-inputs">
+    <label for="full-name">Full Name</label>
+    <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
+    <label for="email-address">Email Address</label>
+    <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+    <label for="message">Message</label>
+    <textarea rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required=""></textarea>
+    <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+  </fieldset>
+  <input type="submit" value="Submit">
+</form>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="js/emailform.js"></script>
